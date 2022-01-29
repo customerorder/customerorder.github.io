@@ -145,7 +145,7 @@
                           <label for="productName" class="form-label required"
                             >Product Name</label
                           >
-                          <select id="productName" name="Item Name" class="form-control select2" tabindex="7" onchange="onProductNameChange()">
+                          <select id="productName" name="Item Name" class="form-control select2" tabindex="7" required onchange="onProductNameChange()">
                             
                          </select>
                         </div>
@@ -154,8 +154,8 @@
                       <div class="row">
                         <div class="col-md-6">
                           <label for="pkg" class="form-label required">Package</label>
-                          <select id="pkg" name="Pkg" class="form-control" tabindex="8" onchange="onPkgChange()">
-                           <option>Select</option>
+                          <select id="pkg" name="Pkg" class="form-control" tabindex="8" onchange="onPkgChange()" required>
+                           <option value="">Select</option>
                          </select>
                           
                         </div>
