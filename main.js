@@ -4,6 +4,7 @@ const scriptURL =
 const form = document.forms["google-sheet"];
 const productList = getItemDetails();
 form.addEventListener("submit", (e) => {
+  
   e.preventDefault();
   if (!form.checkValidity()) {
     return false;
@@ -39,6 +40,7 @@ $(document).ready(function () {
 function addValuesToDropDown(comboxBoxId, list){
   
   var opt = document.createElement('option');
+  opt.value = "";
   opt.innerHTML = "Select";
   comboxBoxId.appendChild(opt);
   list.forEach(x=>{
@@ -55,6 +57,9 @@ function onProductNameChange(){
  
   var pkgList = [...new Set( productList.filter(x=>x.productName === selectedProduct).map(obj => obj.package)) ];
   var pkgComobo = document.getElementById("pkg");
+  document.getElementById("pktsPerCarton").value = "";
+  document.getElementById("barcode").value = "";
+  document.getElementById("productCode").value = "";
   pkgComobo.innerText=null ;
   addValuesToDropDown(pkgComobo, pkgList);
 }
